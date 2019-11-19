@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="style.css" rel="stylesheet">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="vue-app-conditional">
+            <h1>Conditional</h1>
+            <button v-on:click="error = !error">Toggle Error</button>
+            <button v-on:click="success = !success">Toggle Success</button>
+            <p v-if="error">This Is Error</p>
+            <p v-else-if="success">This Is Success</p>
+        </div>
+
+        <div id="vue-app-loop">
+            <h1>Looping through lists</h1>
+            <ul>
+                <li v-for="character in characters">{{character}}</li>
+            </ul>
+            <ul>
+                <li v-for="ninja in ninjas">{{ninja}}</li>
+            </ul>
+            <ul>
+                <li v-for="ninja in ninjas">Name is {{ninja.name}} and age is {{ninja.age}}</li>
+            </ul>
+            <ul>
+                <p v-for="(ninja,index) in ninjas">{{index+1}}. Name is {{ninja.name}} and age is {{ninja.age}}</p>
+            </ul>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
