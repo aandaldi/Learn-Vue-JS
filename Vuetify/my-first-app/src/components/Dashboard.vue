@@ -1,8 +1,8 @@
 <template>
   <nav>
     <div>
-      <v-toolbar dark  src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg">
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-toolbar flat app dark  src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg">
+        <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
         <v-toolbar-title class="text-uppercase">MyFirst Vue App</v-toolbar-title>
 
@@ -19,12 +19,30 @@
             </v-btn>
         </div>
       </v-toolbar>
+
+      <v-navigation-drawer v-model="drawer" app class="indigo">
+          <v-list>
+              <v-list-tile>
+                  <v-list-tile-action>
+                      <v-icon class="white--text">mdi-view-dashboard</v-icon>
+                  </v-list-tile-action>
+                  <v-list-tile-content>
+                      <v-list-tile-title class="white--text">Dashboard</v-list-tile-title>
+                  </v-list-tile-content>
+              </v-list-tile>
+          </v-list>
+      </v-navigation-drawer>
     </div>
   </nav>
 </template>
 
 <script>
 export default {
-  name: "Dashboard"
+//   name: "Dashboard",
+  data(){
+      return{
+          drawer: false
+      }
+  }
 };
 </script>
